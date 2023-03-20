@@ -1,0 +1,483 @@
+<% layout('./layouts/layout.eta') %>
+<div class="container-fluid">
+  <!-- form header -->
+  <h1 class="text-center">Form Member</h1>
+  <div>Keterangan: <span class="text-danger">*</span> Wajib Diisi</div>
+  <div class="mb-3">
+    <div>Produk eFishery yang Diminati: <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="smartFeeder">
+      <label class="form-check-label" for="smartFeeder">
+        SMARTFEEDER
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="feedAndFund">
+      <label class="form-check-label" for="feedAndFund">
+        FEED AND FUND
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="farming">
+      <label class="form-check-label" for="farming">
+        FRESH - CONTRACT FARMING
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="trading">
+      <label class="form-check-label" for="trading">
+        FRESH - CONTRACT TRADING
+      </label>
+    </div>
+  </div>
+
+  <!-- form body -->
+  <div class="text-center py-2" style="background-color: lightgreen;">1. Informasi Pribadi</div>
+  <form class="mt-3">
+    <div class="mb-3">
+      <label for="namaLengkap" class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="namaLengkap" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="namaPanggilan" class="form-label">Nama Panggilan <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="namaPanggilan">
+    </div>
+    <div class="mb-3">
+      <div>Apakah Seorang Pembudidaya? <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="pembudidaya" id="pembudidayaYa" value="true">
+        <label class="form-check-label" for="pembudidayaYa">
+          Ya
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="pembudidaya" id="pembudidayaTidak" value="false">
+        <label class="form-check-label" for="pembudidayaTidak">
+          Tidak
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="namaLengkap" class="form-label">No. Handphone 1 <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="namaLengkap" aria-describedby="emailHelp" name="handphone">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">No. Handphone 1 Terdaftar di Whatsapp <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="radio" name="whatsapp1" id="whatsapp1True" value="true">
+        <label class="form-check-label" for="whatsapp1True">
+          Ya
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="whatsapp1" id="whatsapp1False" value="false">
+        <label class="form-check-label" for="whatsapp1False">
+          Tidak
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="namaLengkap" class="form-label">No. Handphone 2 <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="namaLengkap" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">No. Handphone 2 Terdaftar di Whatsapp <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="radio" name="whatsapp2" id="whatsapp2True" value="true">
+        <label class="form-check-label" for="whatsappYa1">
+          Ya
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="whatsapp2" id="whatsapp2False" value="false">
+        <label class="form-check-label" for="whatsappTidak1">
+          Tidak
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="namaLengkap" class="form-label">No. Handphone 3 <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="namaLengkap" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">No. Handphone 3 Terdaftar di Whatsapp <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="radio" name="whatsapp1" id="whatsapp3True" value="true">
+        <label class="form-check-label" for="whatsapp3True">
+          Ya
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="whatsapp1" id="whatsapp3True" value="false">
+        <label class="form-check-label" for="whatsapp3True">
+          Tidak
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Alamat Email</label>
+      <input type="text" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="alamat" class="form-label">Alamat Rumah/Domisili <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="alamat" aria-describedby="emailHelp" name="alamat">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Provinsi <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" id="provinsi" name="provinsi">
+        <option selected disabled>Select...</option>
+        <% it.provinsi.forEach((provinsi) => { %>
+        <option value="<%= provinsi.kode %>"><%= provinsi.nama %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Kota/Kabupaten <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" disabled id="kota" name="kota">
+        <option value=""></option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Kecamatan <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" disabled id="kecamatan" name="kecamatan">
+      </select>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Kelurahan/Desa <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" disabled id="kelurahan" name="kelurahan">
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="kode-pos" class="form-label">Kode Pos <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="kode-pos" aria-describedby="emailHelp" name="kode-pos">
+    </div>
+    <div class="mb-3">
+      <label for="domisili-lat" class="form-label">Koordinat Alamat Rumah/Domisili Latitude <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="domisili-lat" aria-describedby="emailHelp" name="domisili-lat">
+    </div>
+    <div class="mb-3">
+      <label for="domisili-long" class="form-label">Koordinat Alamat Rumah/Domisili Longitude <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="domisili-long" aria-describedby="emailHelp" name="domisili-long">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Apakah alamat domisili saat ini sama dengan alamat KTP <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="radio" name="domisili-ktp" id="domisili-ktp-true" value="true">
+        <label class="form-check-label" for="domisili-ktp-true">
+          Ya
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="domisili-ktp" id="domisili-ktp-false" value="false">
+        <label class="form-check-label" for="domisili-ktp-false">
+          Tidak
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="alamat" class="form-label">Alamat Sesuai KTP <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="alamat" aria-describedby="emailHelp" name="alamat">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Provinsi Sesuai KTP <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" id="provinsi-ktp" name="provinsi-ktp">
+        <option selected disabled>Select...</option>
+        <% it.provinsi.forEach((provinsi) => { %>
+        <option value="<%= provinsi.kode %>"><%= provinsi.nama %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Kota/Kabupaten Sesuai KTP <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" disabled id="kota-ktp" name="kota-ktp">
+      </select>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Kecamatan Sesuai KTP <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" disabled id="kecamatan-ktp" name="kecamatan-ktp">
+      </select>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Kelurahan/Desa Sesuai KTP <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" disabled id="kelurahan-ktp" name="kelurahan-ktp">
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="kode-pos-ktp" class="form-label">Kode Pos Sesuai KTP <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="kode-pos-ktp" aria-describedby="emailHelp" name="kode-pos-ktp">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Agama <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" id="agama" name="agama">
+        <option disabled selected>Select...</option>
+        <option value="islam">Islam</option>
+        <option value="protestan">Protestan</option>
+        <option value="katolik">Katolik</option>
+        <option value="hindu">Hindu</option>
+        <option value="buddha">Buddha</option>
+        <option value="khonghucu">Khonghucu</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Tempat Lahir <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" id="tempat-lahir" name="tempat-lahir">
+        <option disabled selected>Select...</option>
+        <% it.kota.forEach(kota => { %>
+        <option value="<%= kota.kode %>"><%= kota.nama %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="kode-pos-ktp" class="form-label">Tanggal Lahir <span class="text-danger">*</span></label>
+      <input type="date" class="form-control" id="tgl-lahir" aria-describedby="emailHelp" name="tgl-lahir">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Jenis Kelamin <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="radio" name="jenis-kelamin" id="jenis-kelamin-laki" value="Laki-laki">
+        <label class="form-check-label" for="jenis-kelamin-laki">
+          Laki-laki
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="jenis-kelamin" id="jenis-kelamin-perempuan" value="Perempuan">
+        <label class="form-check-label" for="jenis-kelamin-perempuan">
+          Perempuan
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Status Perkawinan <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="status-perkawinan" id="kawin" value="Kawin">
+        <label class="form-check-label" for="kawin">
+          Kawin
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="status-perkawinan" id="belum-kawin" value="Belum Kawin">
+        <label class="form-check-label" for="belum-kawin">
+          Belum Kawin
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="status-perkawinan" id="duda-janda" value="Duda/Janda">
+        <label class="form-check-label" for="duda-janda">
+          Duda/Janda
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Pendidikan Terakhir <span class="text-danger">*</span></div>
+      <select class="form-select" aria-label="Default select example" id="pendidikan" name="pendidikan">
+        <option disabled selected>Select...</option>
+        <option value="SD">SD</option>
+        <option value="SMP">SMP</option>
+        <option value="SMA">SMA/SMK</option>
+        <option value="Diploma">Diploma I/II/III</option>
+        <option value="S1">S1/D4</option>
+        <option value="S2">S2</option>
+        <option value="S3">S3</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="nomor-ktp" class="form-label">Nomor KTP <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="nomor-ktp" aria-describedby="emailHelp" name="nomor-ktp">
+    </div>
+    <div class="mb-3">
+      <label for="nomor-kk" class="form-label">No. Kartu Keluarga <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="nomor-kk" aria-describedby="emailHelp" name="nomor-kk">
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Memiliki NPWP? <span class="text-danger">*</span><span class="text-success">Centang</span></div>
+      <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="radio" name="npwp" id="npwp-true" value="true">
+        <label class="form-check-label" for="npwp-true">
+          Ya
+        </label>
+      </div>
+      <div class="form-check form-check-inline mb-3">
+        <input class="form-check-input" type="radio" name="npwp" id="npwp-false" value="false">
+        <label class="form-check-label" for="npwp-false">
+          Tidak
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-label">Nama Bank yang Digunakan</div>
+      <select class="form-select" aria-label="Default select example" id="bank" name="bank">
+        <option disabled selected>Select...</option>
+        <% it.bank.forEach(bank => { %>
+        <option value="<%= bank.nama %>"><%= bank.nama %></option>
+        <% }) %>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="rekening-bank" class="form-label">Nomor Rekening Bank</label>
+      <input type="text" class="form-control" id="rekening-bank" aria-describedby="emailHelp" name="rekening-bank">
+    </div>
+    <!-- <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button> -->
+  </form>
+</div>
+<script>
+  $(document).ready(function() {
+    $(document).on('select2:open', () => {
+      document.querySelector('.select2-search__field').focus();
+    });
+
+    $("select").select2({
+      theme: 'bootstrap4',
+      placeholder: 'Select...'
+    });
+
+    function ajaxCall(route, element, kode) {
+      $.ajax({
+        type: "POST",
+        url: `/api/wilayah/${route}`,
+        data: {
+          kode: kode
+        },
+        dataType: "json",
+        success: function(results) {
+          console.log(results);
+          $(element).append(`<option selected disabled>Select..</option>`);
+          results.forEach(result => {
+            $(element).append(`<option value="${result.kode}">${result.nama}</option>`);
+          });
+          $(element).prop('disabled', false);
+        }
+      });
+    }
+
+    function changeDomisiliKtp() {
+      if ($('#domisili-ktp-true').is(':checked')) {
+        $("#provinsi-ktp").val($("#provinsi").val()).change();
+        $("#kota-ktp").html($("#kota").find(":selected").clone());
+        $("#kecamatan-ktp").html($("#kecamatan").find(":selected").clone())
+        $("#kelurahan-ktp").html($("#kelurahan").find(":selected").clone())
+        $("#kode-pos-ktp").val($("#kode-pos").val())
+      }
+    }
+
+
+    // get kota
+    $("#provinsi").change(function() {
+      $("#kota").html('');
+      $("#kecamatan").html('');
+      $("#kecamatan").prop('disabled', true);
+      $("#kelurahan").html('');
+      $("#kelurahan").prop('disabled', true);
+      var kode = $(this).val();
+      ajaxCall('kota', '#kota', kode);
+      // change domisili-ktp if true
+      changeDomisiliKtp();
+    });
+    // get kecamatan
+    $("#kota").change(function() {
+      $("#kecamatan").html('');
+      $("#kelurahan").html('');
+      $("#kelurahan").prop('disabled', true);
+      var kode = $(this).val();
+      ajaxCall('kecamatan', '#kecamatan', kode);
+      // change domisili-ktp if true
+      changeDomisiliKtp();
+    });
+    // get kelurahan
+    $("#kecamatan").change(function() {
+      $("#kelurahan").html('');
+      var kode = $(this).val();
+      ajaxCall('kelurahan', '#kelurahan', kode);
+      // change domisili-ktp if true
+      changeDomisiliKtp();
+    });
+    $("#kelurahan").change(function() {
+      // change domisili-ktp if true
+      changeDomisiliKtp();
+    });
+    $("#kode-pos").change(() => {
+      console.log($(this));
+      changeDomisiliKtp();
+    })
+
+    // domisili-ktp
+    // get kota
+    $("#provinsi-ktp").change(function() {
+      if (!$("#provinsi-ktp").prop('disabled')) {
+        $("#kota-ktp").html('');
+        $("#kecamatan-ktp").html('');
+        $("#kecamatan-ktp").prop('disabled', true);
+        $("#kelurahan-ktp").html('');
+        $("#kelurahan-ktp").prop('disabled', true);
+        var kode = $(this).val();
+        console.log(kode);
+        ajaxCall('kota', '#kota-ktp', kode);
+      }
+    });
+
+    // get kecamatan
+    $("#kota-ktp").change(function() {
+      $("#kecamatan-ktp").html('');
+      $("#kelurahan-ktp").html('');
+      $("#kelurahan-ktp").prop('disabled', true);
+      var kode = $(this).val();
+      ajaxCall('kecamatan', '#kecamatan-ktp', kode);
+    });
+    // get kelurahan
+    $("#kecamatan-ktp").change(function() {
+      $("#kelurahan-ktp").html('');
+      var kode = $(this).val();
+      ajaxCall('kelurahan', '#kelurahan-ktp', kode);
+    });
+
+    // check if domisili = ktp
+    $("#domisili-ktp-true").click(function() {
+      console.log(this.value);
+      console.log($("#provinsi").val());
+      console.log($("#provinsi-ktp").val());
+      $("#provinsi-ktp").prop("disabled", true);
+      $("#kota-ktp").prop("disabled", true);
+      $("#kecamatan-ktp").prop("disabled", true);
+      $("#kelurahan-ktp").prop("disabled", true);
+      $("#kode-pos-ktp").prop("disabled", true);
+      changeDomisiliKtp();
+    });
+    $("#domisili-ktp-false").click(function() {
+      console.log(this.value);
+      $("#provinsi-ktp").val("").change();
+      $("#provinsi-ktp").prop("disabled", false);
+      $("#kota-ktp").html('');
+      $("#kecamatan-ktp").html('');
+      $("#kelurahan-ktp").html('');
+      $('#kode-pos-ktp').val('');
+      $('#kode-pos-ktp').prop("disabled", false);
+    });
+
+    // $('input[type=radio][name=domisili-ktp]').change(function() {
+    //   // domisili = ktp
+    //   if ($(this).val() == 'true') {
+    //     console.log(this.value);
+    //     $("#provinsi-ktp").prop("disabled", true);
+    //     $("#kota-ktp").prop("disabled", true);
+    //     $("#kecamatan-ktp").prop("disabled", true);
+    //     $("#kelurahan-ktp").prop("disabled", true);
+    //     changeDomisiliKtp();
+    //   }
+    //   // domisili != ktp
+    //   if ($(this).val() == 'false') {
+    //     console.log(this.value);
+    //     $("#provinsi-ktp").prop("disabled", false);
+    //     $("#provinsi-ktp").html($("#provinsi").children().clone());
+    //     $("#kota-ktp").html('');
+    //     $("#kecamatan-ktp").html('');
+    //     $("#kelurahan-ktp").html('');
+    //   }
+    // })
+
+
+  });
+</script>
