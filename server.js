@@ -4,6 +4,9 @@ require('dotenv').config()
 // express
 const express = require('express');
 const app = express();
+// helmet
+const helmet = require("helmet");
+app.use(helmet());
 
 // set template engine
 const eta = require('eta');
@@ -35,7 +38,7 @@ const wilayah = require('./routes/api/wilayah.js');
 
 app.route('/')
   .get(homeController.index)
-// .post(homeController.create)
+  .post(homeController.create)
 
 // api
 app.use('/api/wilayah', wilayah)
