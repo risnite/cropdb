@@ -106,159 +106,193 @@
     </div>
     <div class="mb-3">
       <label for="alamat" class="form-label">Alamat Rumah/Domisili <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="alamat" name="alamatDomisili" required>
+      <input type="text" class="form-control" id="alamat" name="alamat" required>
       <div class="invalid-feedback">
         Alamat rumah/domisili harus diisi.
       </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Provinsi <span class="text-danger">*</span></div>
-      <select class="form-select" id="provinsi" name="provinsi">
-        <option selected disabled>Select...</option>
+      <select class="form-select" id="provinsi" name="provinsi" required>
+        <option value="">Select...</option>
         <% it.provinsi.forEach((provinsi) => { %>
         <option label="<%= provinsi.kode %>" value="<%= provinsi.nama %>"><%= provinsi.nama %></option>
         <% }) %>
       </select>
+      <div class="invalid-feedback">Provinsi harus diisi.</div>
     </div>
     <div class="mb-3">
       <div class="form-label">Kota/Kabupaten <span class="text-danger">*</span></div>
-      <select class="form-select" disabled id="kota" name="kota">
-        <option value=""></option>
-      </select>
+      <select class="form-select" disabled id="kota" name="kota" required></select>
+      <div class="invalid-feedback">Kota/Kabupaten harus diisi.</div>
     </div>
     <div class="mb-3">
       <div class="form-label">Kecamatan <span class="text-danger">*</span></div>
-      <select class="form-select" disabled id="kecamatan" name="kecamatan">
-      </select>
+      <select class="form-select" disabled id="kecamatan" name="kecamatan" required></select>
+      <div class="invalid-feedback">Kecamatan harus diisi.</div>
     </div>
     <div class="mb-3">
       <div class="form-label">Kelurahan/Desa <span class="text-danger">*</span></div>
-      <select class="form-select" disabled id="kelurahan" name="kelurahan">
-      </select>
+      <select class="form-select" disabled id="kelurahan" name="kelurahan" required></select>
+      <div class="invalid-feedback">Kelurahan/Desa harus diisi.</div>
     </div>
     <div class="mb-3">
-      <label for="kodePos" class="form-label">Kode Pos <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="kodePos" name="kodePos">
+      <label for="kode-pos" class="form-label">Kode Pos <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="kode-pos" name="kode-pos" required>
+      <div class="invalid-feedback">
+        Kode pos harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <label for="koordinat-domisili" class="form-label">Koordinat Alamat Rumah/Domisili (Latitude, Longitude) <span class="text-danger">*</span></label>
       <div class="input-group">
-        <input type="text" class="form-control" id="koordinat-domisili" name="koordinatDomisili">
+        <input type="text" class="form-control" id="koordinat-domisili" name="koordinatDomisili" required>
         <a class="btn btn-primary" href="http://www.google.com/maps" role="button" target="_blank">Google Maps</a>
+        <div class="invalid-feedback">
+          Koordinat domisili harus diisi.
+        </div>
       </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Apakah alamat domisili saat ini sama dengan alamat KTP <span class="text-danger">*</span><span class="text-success">Centang</span></div>
-      <div class="form-check form-check-inline mb-3">
-        <input class="form-check-input" type="radio" name="domisiliKtp" id="domisili-ktp-true" value="true">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="domisiliKtp" id="domisili-ktp-true" value="true" required>
         <label class="form-check-label" for="domisili-ktp-true">
           Ya
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="domisiliKtp" id="domisili-ktp-false" value="false">
+        <input class="form-check-input" type="radio" name="domisiliKtp" id="domisili-ktp-false" value="false" required>
         <label class="form-check-label" for="domisili-ktp-false">
           Tidak
         </label>
       </div>
+      <input class="form-check-input" type="radio" name="domisiliKtp" required hidden>
+      <div class="invalid-feedback">
+        Centang salah satu.
+      </div>
     </div>
     <div class="mb-3">
       <label for="alamat" class="form-label">Alamat Sesuai KTP <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="alamat" name="alamatKtp">
+      <input type="text" class="form-control" id="alamatKtp" name="alamatKtp" required>
+      <div class="invalid-feedback">
+        Alamat KTP harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Provinsi Sesuai KTP <span class="text-danger">*</span></div>
-      <select class="form-select" id="provinsi-ktp" name="provinsiKtp">
-        <option selected disabled>Select...</option>
+      <select class="form-select" id="provinsi-ktp" name="provinsi-ktp" required>
+        <option value="">Select...</option>
         <% it.provinsi.forEach((provinsi) => { %>
         <option label="<%= provinsi.kode %>" value="<%= provinsi.nama %>"><%= provinsi.nama %></option>
         <% }) %>
       </select>
+      <div class="invalid-feedback">Provinsi KTP harus diisi.</div>
     </div>
     <div class="mb-3">
       <div class="form-label">Kota/Kabupaten Sesuai KTP <span class="text-danger">*</span></div>
-      <select class="form-select" disabled id="kota-ktp" name="kotaKtp">
-      </select>
+      <select class="form-select" disabled id="kota-ktp" name="kota-ktp" required></select>
+      <div class="invalid-feedback">Kota KTP harus diisi.</div>
     </div>
     <div class="mb-3">
       <div class="form-label">Kecamatan Sesuai KTP <span class="text-danger">*</span></div>
-      <select class="form-select" disabled id="kecamatan-ktp" name="kecamatanKtp">
-      </select>
+      <select class="form-select" disabled id="kecamatan-ktp" name="kecamatan-ktp" required></select>
+      <div class="invalid-feedback">Kecamatan KTP harus diisi.</div>
     </div>
     <div class="mb-3">
       <div class="form-label">Kelurahan/Desa Sesuai KTP <span class="text-danger">*</span></div>
-      <select class="form-select" disabled id="kelurahan-ktp" name="kelurahanKtp">
-      </select>
+      <select class="form-select" disabled id="kelurahan-ktp" name="kelurahan-ktp" required></select>
+      <div class="invalid-feedback">Kelurahan/Desa KTP harus diisi.</div>
     </div>
     <div class="mb-3">
-      <label for="kode-pos-ktp" class="form-label">Kode Pos Sesuai KTP <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="kode-pos-ktp" aria-describedby="emailHelp" name="kodePosKtp">
+      <label for="kodePosKtp" class="form-label">Kode Pos Sesuai KTP <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="kodePosKtp" name="kodePosKtp" required>
+      <div class="invalid-feedback">
+        Kode pos KTP harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Agama <span class="text-danger">*</span></div>
-      <select class="form-select" id="agama" name="agama">
-        <option disabled selected>Select...</option>
-        <option value="Islam">Islam</option>
-        <option value="Kristen">Kristen</option>
-        <option value="Katolik">Katolik</option>
-        <option value="Hindu">Hindu</option>
-        <option value="Buddha">Buddha</option>
-        <option value="Khonghucu">Khonghucu</option>
+      <select class="form-select" id="agama" name="agama" required>
+        <option value="">Select...</option>
+        <option value="islam">Islam</option>
+        <option value="kristen">Kristen</option>
+        <option value="katolik">Katolik</option>
+        <option value="hindu">Hindu</option>
+        <option value="buddha">Buddha</option>
+        <option value="khonghucu">Khonghucu</option>
       </select>
+      <div class="invalid-feedback">
+        Agama harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Tempat Lahir <span class="text-danger">*</span></div>
-      <select class="form-select" id="tempat-lahir" name="tempatLahir">
-        <option disabled selected>Select...</option>
+      <select class="form-select" id="tempat-lahir" name="tempat-lahir" required>
+        <option value="">Select...</option>
         <% it.kota.forEach(kota => { %>
         <option value="<%= kota.nama %>"><%= kota.nama %></option>
         <% }) %>
       </select>
+      <div class="invalid-feedback">
+        Tempat lahir harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <label for="kode-pos-ktp" class="form-label">Tanggal Lahir <span class="text-danger">*</span></label>
-      <input type="date" class="form-control" id="tgl-lahir" aria-describedby="emailHelp" name="tglLahir">
+      <input type="date" class="form-control" id="tgl-lahir" name="tgl-lahir" required>
+      <div class="invalid-feedback">
+        Tanggal lahir harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Jenis Kelamin <span class="text-danger">*</span><span class="text-success">Centang</span></div>
-      <div class="form-check form-check-inline mb-3">
-        <input class="form-check-input" type="radio" name="jenisKelamin" id="jenis-kelamin-laki" value="Laki-laki">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="jenis-kelamin" id="jenis-kelamin-laki" value="Laki-laki" required>
         <label class="form-check-label" for="jenis-kelamin-laki">
           Laki-laki
         </label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="jenisKelamin" id="jenis-kelamin-perempuan" value="Perempuan">
+        <input class="form-check-input" type="radio" name="jenis-kelamin" id="jenis-kelamin-perempuan" value="Perempuan" required>
         <label class="form-check-label" for="jenis-kelamin-perempuan">
           Perempuan
         </label>
+      </div>
+      <input class="form-check-input" type="radio" name="jenis-kelamin" value="" required hidden>
+      <div class="invalid-feedback">
+        Centang salah satu.
       </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Status Perkawinan <span class="text-danger">*</span><span class="text-success">Centang</span></div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="statusPerkawinan" id="kawin" value="Kawin">
+        <input class="form-check-input" type="radio" name="status-perkawinan" id="kawin" value="Kawin" required>
         <label class="form-check-label" for="kawin">
           Kawin
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="statusPerkawinan" id="belum-kawin" value="Belum Kawin">
+        <input class="form-check-input" type="radio" name="status-perkawinan" id="belum-kawin" value="Belum Kawin" required>
         <label class="form-check-label" for="belum-kawin">
           Belum Kawin
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="statusPerkawinan" id="duda-janda" value="Duda/Janda">
+        <input class="form-check-input" type="radio" name="status-perkawinan" id="duda-janda" value="Duda/Janda" required>
         <label class="form-check-label" for="duda-janda">
           Duda/Janda
         </label>
       </div>
+      <input class="form-check-input" type="radio" name="status-perkawinan" value="" required hidden>
+      <div class="invalid-feedback">
+        Centang salah satu.
+      </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Pendidikan Terakhir <span class="text-danger">*</span></div>
-      <select class="form-select" aria-label="Default select example" id="pendidikan" name="pendidikan">
-        <option disabled selected>Select...</option>
+      <select class="form-select" id="pendidikan" name="pendidikan" required>
+        <option value="">Select...</option>
         <option value="SD">SD</option>
         <option value="SMP">SMP</option>
         <option value="SMA">SMA/SMK</option>
@@ -267,33 +301,46 @@
         <option value="S2">S2</option>
         <option value="S3">S3</option>
       </select>
+      <div class="invalid-feedback">
+        Pendidikan harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <label for="nomor-ktp" class="form-label">Nomor KTP <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="nomor-ktp" name="nomorKtp">
+      <input type="text" class="form-control" id="nomor-ktp" name="nomor-ktp" required>
+      <div class="invalid-feedback">
+        Nomor KTP harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <label for="nomor-kk" class="form-label">No. Kartu Keluarga <span class="text-danger">*</span></label>
-      <input type="text" class="form-control" id="nomor-kk" name="nomorKk">
+      <input type="text" class="form-control" id="nomor-kk" name="nomor-kk" required>
+      <div class="invalid-feedback">
+        Nomor KK harus diisi.
+      </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Memiliki NPWP? <span class="text-danger">*</span><span class="text-success">Centang</span></div>
-      <div class="form-check form-check-inline mb-3">
-        <input class="form-check-input" type="radio" name="npwp" id="npwp-true" value="true">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="npwp" id="npwp-true" value="true" required>
         <label class="form-check-label" for="npwp-true">
           Ya
         </label>
       </div>
-      <div class="form-check form-check-inline mb-3">
-        <input class="form-check-input" type="radio" name="npwp" id="npwp-false" value="false">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="npwp" id="npwp-false" value="false" required>
         <label class="form-check-label" for="npwp-false">
           Tidak
         </label>
       </div>
+      <input class="form-check-input" type="radio" name="npwp" value="" required hidden>
+      <div class="invalid-feedback">
+        Centang salah satu.
+      </div>
     </div>
     <div class="mb-3">
       <div class="form-label">Nama Bank yang Digunakan</div>
-      <select class="form-select" aria-label="Default select example" id="bank" name="bank">
+      <select class="form-select" id="bank" name="bank">
         <option disabled selected>Select...</option>
         <% it.bank.forEach(bank => { %>
         <option value="<%= bank.nama %>"><%= bank.nama %></option>
@@ -302,7 +349,7 @@
     </div>
     <div class="mb-3">
       <label for="rekening-bank" class="form-label">Nomor Rekening Bank</label>
-      <input type="text" class="form-control" id="rekening-bank" name="rekeningBank">
+      <input type="text" class="form-control" id="rekening-bank" name="rekening-bank">
     </div>
     <!-- <div class="mb-3 form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">

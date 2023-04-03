@@ -1,32 +1,32 @@
 // // validation
-// 'use strict'
+'use strict'
 
-// // Fetch all the forms we want to apply custom Bootstrap validation styles to
-// const forms = document.querySelectorAll('.needs-validation')
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+const forms = document.querySelectorAll('.needs-validation')
 
-// // Loop over them and prevent submission
-// Array.from(forms).forEach(form => {
-//   form.addEventListener('submit', event => {
-//     const checked = document.querySelectorAll(".produk-checkbox:checked").length;
-//     const checkboxes = document.querySelectorAll(".produk-checkbox");
-//     if (checked) {
-//       console.log(checked);
-//       Array.from(checkboxes).forEach((checkbox) => {
-//         checkbox.required = false
-//       })
-//     } else {
-//       Array.from(checkboxes).forEach((checkbox) => {
-//         checkbox.required = true
-//       })
-//     }
-//     if (!form.checkValidity()) {
-//       event.preventDefault()
-//       event.stopPropagation()
-//     }
-//     form.classList.add('was-validated')
+// Loop over them and prevent submission
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', event => {
+    const checked = document.querySelectorAll(".produk-checkbox:checked").length;
+    const checkboxes = document.querySelectorAll(".produk-checkbox");
+    if (checked) {
+      console.log(checked);
+      Array.from(checkboxes).forEach((checkbox) => {
+        checkbox.required = false
+      })
+    } else {
+      Array.from(checkboxes).forEach((checkbox) => {
+        checkbox.required = true
+      })
+    }
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    form.classList.add('was-validated')
 
-//   }, false)
-// });
+  }, false)
+});
 // // end of validation
 
 // save data during refresh page
@@ -90,10 +90,6 @@
 //   }
 // }
 $(document).ready(function () {
-  $("form").on("submit", () => {
-
-  })
-
   $(document).on('select2:open', () => {
     document.querySelector('.select2-search__field').focus();
   });
@@ -113,7 +109,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (results) {
         // console.log(results);
-        $(element).append(`<option selected disabled>Select..</option>`);
+        $(element).append(`<option value="">Select..</option>`);
         results.forEach(result => {
           $(element).append(`<option label="${result.kode}" value="${result.nama}">${result.nama}</option>`);
         });

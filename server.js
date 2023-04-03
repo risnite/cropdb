@@ -29,16 +29,11 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
-
-// controllers
-const homeController = require('./controllers/home-controller.js');
-
 // routes
+const web = require('./routes/web.js');
 const wilayah = require('./routes/api/wilayah.js');
 
-app.route('/')
-  .get(homeController.index)
-  .post(homeController.create)
+app.use('/', web)
 
 // api
 app.use('/api/wilayah', wilayah)
