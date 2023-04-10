@@ -30,7 +30,7 @@ module.exports = {
         console.log(provinsi);
         // console.log('kota: ');
         // console.log(kota);
-        res.render("member/create", { title: 'Home', provinsi: provinsi, kota: kota, bank: bank })
+        res.render("create", { layout: 'layouts/form', title: 'Home', provinsi: provinsi, kota: kota, bank: bank })
       })
     },
   store:

@@ -8,18 +8,13 @@ const app = express();
 const helmet = require("helmet");
 app.use(helmet());
 
-// set template engine
-const eta = require('eta');
-app.engine("eta", eta.renderFile)
-if (process.env.NODE_ENV == 'development') {
-  eta.configure({ views: "./views", cache: false })
-}
-if (process.env.NODE_ENV == 'production') {
-  eta.configure({ views: "./views", cache: true })
-}
-app.set("views", "./views")
-app.set("view cache", true)
-app.set("view engine", "eta")
+// set ejs template engine
+var expressLayouts = require('express-ejs-layouts');
+app.set("views", "./views");
+app.set("view engine", "ejs");
+app.use(expressLayouts);
+app.set('layout', 'layouts/layout');
+
 
 // static file
 app.use(express.static('public'))

@@ -10,7 +10,7 @@ Array.from(forms).forEach(form => {
     // checkbox validation
     const checkboxValidation = (checked, checkboxes) => {
       if (checked) {
-        console.log(checked);
+        // console.log(checked);
         Array.from(checkboxes).forEach((checkbox) => {
           checkbox.required = false
         })
@@ -151,8 +151,8 @@ $(document).ready(function () {
     $("#kelurahan").html('');
     $("#kelurahan").prop('disabled', true);
     var kode = $(this).find('option:selected').prop('label');
-    console.log('kode provinsi:');
-    console.log(kode);
+    // console.log('kode provinsi:');
+    // console.log(kode);
     ajaxCall('kota', '#kota', kode);
     // change domisili-ktp if true
     changeDomisiliKtp();
@@ -180,7 +180,7 @@ $(document).ready(function () {
     changeDomisiliKtp();
   });
   $("#kode-pos").change(() => {
-    console.log($(this));
+    // console.log($(this));
     changeDomisiliKtp();
   })
 
@@ -194,7 +194,7 @@ $(document).ready(function () {
       $("#kelurahan-ktp").html('');
       $("#kelurahan-ktp").prop('disabled', true);
       var kode = $(this).find('option:selected').prop('label');
-      console.log(kode);
+      // console.log(kode);
       ajaxCall('kota', '#kota-ktp', kode);
     }
   });
@@ -216,9 +216,9 @@ $(document).ready(function () {
 
   // check if domisili = ktp
   $("#domisili-ktp-true").click(function () {
-    console.log(this.value);
-    console.log($("#provinsi").val());
-    console.log($("#provinsi-ktp").val());
+    // console.log(this.value);
+    // console.log($("#provinsi").val());
+    // console.log($("#provinsi-ktp").val());
     $("#alamat-ktp").prop("disabled", true);
     $("#provinsi-ktp").prop("disabled", true);
     $("#kota-ktp").prop("disabled", true);
@@ -228,7 +228,7 @@ $(document).ready(function () {
     changeDomisiliKtp();
   });
   $("#domisili-ktp-false").click(function () {
-    console.log(this.value);
+    // console.log(this.value);
     $("#alamat-ktp").val("").change();
     $("#alamat-ktp").prop("disabled", false);
     $("#provinsi-ktp").val("").change();
@@ -239,27 +239,4 @@ $(document).ready(function () {
     $('#kode-pos-ktp').val('');
     $('#kode-pos-ktp').prop("disabled", false);
   });
-
-  // $('input[type=radio][name=domisili-ktp]').change(function() {
-  //   // domisili = ktp
-  //   if ($(this).val() == 'true') {
-  //     console.log(this.value);
-  //     $("#provinsi-ktp").prop("disabled", true);
-  //     $("#kota-ktp").prop("disabled", true);
-  //     $("#kecamatan-ktp").prop("disabled", true);
-  //     $("#kelurahan-ktp").prop("disabled", true);
-  //     changeDomisiliKtp();
-  //   }
-  //   // domisili != ktp
-  //   if ($(this).val() == 'false') {
-  //     console.log(this.value);
-  //     $("#provinsi-ktp").prop("disabled", false);
-  //     $("#provinsi-ktp").html($("#provinsi").children().clone());
-  //     $("#kota-ktp").html('');
-  //     $("#kecamatan-ktp").html('');
-  //     $("#kelurahan-ktp").html('');
-  //   }
-  // })
-
-
 });
