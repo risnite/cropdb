@@ -1,6 +1,9 @@
 const { body, validationResult } = require('express-validator');
 
 exports.form = [
+  body('produk')
+    .notEmpty()
+    .withMessage('Centang salah satu'),
   body('namaLengkap')
     .notEmpty()
     .withMessage('Nama lengkap harus diisi'),

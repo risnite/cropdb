@@ -5,6 +5,7 @@ const validator = require('../validators/form-validator.js');
 const homeController = require('../controllers/home-controller.js');
 
 router.get('/', homeController.index)
-router.post('/', validator.form, homeController.create)
+router.get('/create', homeController.create)
+router.post('/', validator.form, homeController.store)
 
 module.exports = router

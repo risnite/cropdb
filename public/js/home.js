@@ -1,4 +1,4 @@
-// // validation
+// validation
 'use strict'
 
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -7,18 +7,28 @@ const forms = document.querySelectorAll('.needs-validation')
 // Loop over them and prevent submission
 Array.from(forms).forEach(form => {
   form.addEventListener('submit', event => {
-    const checked = document.querySelectorAll(".produk-checkbox:checked").length;
-    const checkboxes = document.querySelectorAll(".produk-checkbox");
-    if (checked) {
-      console.log(checked);
-      Array.from(checkboxes).forEach((checkbox) => {
-        checkbox.required = false
-      })
-    } else {
-      Array.from(checkboxes).forEach((checkbox) => {
-        checkbox.required = true
-      })
+    // checkbox validation
+    const checkboxValidation = (checked, checkboxes) => {
+      if (checked) {
+        console.log(checked);
+        Array.from(checkboxes).forEach((checkbox) => {
+          checkbox.required = false
+        })
+      } else {
+        Array.from(checkboxes).forEach((checkbox) => {
+          checkbox.required = true
+        })
+      }
     }
+
+    const produkChecked = document.querySelectorAll(".produk-checkbox:checked").length;
+    const produkCheckboxes = document.querySelectorAll(".produk-checkbox");
+    checkboxValidation(produkChecked, produkCheckboxes);
+
+    const komoditasChecked = document.querySelectorAll(".komoditas-checkbox:checked").length;
+    const komoditasCheckboxes = document.querySelectorAll(".komoditas-checkbox");
+    checkboxValidation(komoditasChecked, komoditasCheckboxes);
+
     if (!form.checkValidity()) {
       event.preventDefault()
       event.stopPropagation()
@@ -90,6 +100,10 @@ Array.from(forms).forEach(form => {
 //   }
 // }
 $(document).ready(function () {
+  $('form').submit(() => {
+    $('select').prop('disabled', false);
+    $('input').prop('disabled', false);
+  })
   $(document).on('select2:open', () => {
     document.querySelector('.select2-search__field').focus();
   });
@@ -120,6 +134,7 @@ $(document).ready(function () {
 
   function changeDomisiliKtp() {
     if ($('#domisili-ktp-true').is(':checked')) {
+      $("#alamat-ktp").val($("#alamat").val()).change();
       $("#provinsi-ktp").val($("#provinsi").val()).change();
       $("#kota-ktp").html($("#kota").find(":selected").clone());
       $("#kecamatan-ktp").html($("#kecamatan").find(":selected").clone())
@@ -136,6 +151,7 @@ $(document).ready(function () {
     $("#kelurahan").html('');
     $("#kelurahan").prop('disabled', true);
     var kode = $(this).find('option:selected').prop('label');
+    console.log('kode provinsi:');
     console.log(kode);
     ajaxCall('kota', '#kota', kode);
     // change domisili-ktp if true
@@ -203,6 +219,7 @@ $(document).ready(function () {
     console.log(this.value);
     console.log($("#provinsi").val());
     console.log($("#provinsi-ktp").val());
+    $("#alamat-ktp").prop("disabled", true);
     $("#provinsi-ktp").prop("disabled", true);
     $("#kota-ktp").prop("disabled", true);
     $("#kecamatan-ktp").prop("disabled", true);
@@ -212,6 +229,8 @@ $(document).ready(function () {
   });
   $("#domisili-ktp-false").click(function () {
     console.log(this.value);
+    $("#alamat-ktp").val("").change();
+    $("#alamat-ktp").prop("disabled", false);
     $("#provinsi-ktp").val("").change();
     $("#provinsi-ktp").prop("disabled", false);
     $("#kota-ktp").html('');
