@@ -14,6 +14,10 @@ module.exports = {
         })
         console.log('home-controller-index:');
         console.log(results);
+        results.forEach(result => {
+          console.log(typeof result.produk);
+          console.log(result.produk);
+        });
         res.render("home", { title: 'Home', results: results })
       })
     },

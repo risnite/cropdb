@@ -240,3 +240,8 @@ $(document).ready(function () {
     $('#kode-pos-ktp').prop("disabled", false);
   });
 });
+// test
+results.forEach(result => {
+  console.log(typeof result.produk);
+  console.log(result.produk);
+});

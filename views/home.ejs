@@ -4,7 +4,7 @@
   </a>
 </div>
 <div class="table-responsive">
-  <table class="table table-sm align-middle">
+  <table class="table table-sm">
     <thead>
       <tr>
         <td>Nama</td>
@@ -23,16 +23,24 @@
         <td><%= result.kota %></td>
         <td>
           <ul class="list-group">
+            <% if (typeof result.produk == 'object') { %>
             <% result.produk.forEach(produk => { %>
             <li class="list-group-item"><%= produk %></li>
             <% }) %>
+            <% } else { %>
+            <li class="list-group-item"><%= result.produk %></li>
+            <% } %>
           </ul>
         </td>
         <td>
           <ul class="list-group">
+            <% if (typeof result.komoditas == 'object') { %>
             <% result.komoditas.forEach(komoditas => { %>
             <li class="list-group-item"><%= komoditas %></li>
             <% }) %>
+            <% } else { %>
+            <li class="list-group-item"><%= result.komoditas %></li>
+            <% } %>
           </ul>
         </td>
         <td><%= result.handphone %></td>
